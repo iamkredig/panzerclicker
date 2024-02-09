@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Panzer Check.io</title>
+          <link rel="stylesheet" href="script.css">  
+
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+     </head>
+     <body class="dark-theme || light-theme">
+          <!-- TASKS -->
+          <div class="tasklist">
+
+               <div class="head">   
+                     <h1>PANZERclick.io ProWo2022</h1> 
+               </div>
+
+               <div class="fastbuttons">
+               </div>
+          </div>
+
+          <!-- CLICKER -->
+          <div class="clicker">
+
+               <div class="leftrow">
+                    <div class="infoplaceholder greyout">
+                         <span class="front2"><p>Achievement:</p></span>
+                    </div>
+                    <div class="infoplaceholder greyout">
+                         <span class="front2 text"><p>Achievement:</p></span>
+                    </div>
+                    <div class="infoplaceholder greyout">
+                         <span class="front2"><p>Achievement:</p></span>
+                    </div>
+                    <div class="infoplaceholder greyout">
+                         <span class="front2"><p>Achievement:</p></span>
+                    </div>    
+                    <div class="infoplaceholder greyout">
+                         <span class="front2"><p>Achievement:</p></span>
+                    </div>    
+              </div>
+               
+               <div class="mainrow">
+                    <div class="count">
+                         
+                         <div class="projects">
+                              <button class="buttonemo" id="emotionalid"> <div class="schuss">Schüsse:</div> </button>
+                              <ul style="list-style: none;">
+                                <li>
+                                   <video width="320" height="240" autoplay>
+                                   <source src="./vid/Emotional damage .mp4" type="video/mp4">
+                                   </video>
+                                </li>
+                              </ul>
+                         </div>
+
+                         <div class="spanclicks"><span id="clicks"></span> </div> 
+                         <p class="prsec"> pro Sekunde: <span id="income">0.00</span> </p>
+                         
+                        
+                    </div>
+                    
+                    <div class="panzer"> </div>
+               </div>
+
+               <div class="rightrow">
+
+                    <!-- Upgrades -->
+                    <div class="buttonplaceholder">
+                         <!-- Bullet1 -->
+                         
+                         <button class="buttontemplate" id="cursor">
+                              <div class="dropdown-content">
+                                   <a>0.1 Schuss <br> pro Sekunde</a>
+                              </div>
+                              <span class="front text"> 
+
+                                   <div class="btnICON">
+                                        <img class="bulletsize" src="./img/Bullet1.gif" alt="picture">
+                                   </div>
+                                   <div class="btncost">
+                                        <span>Kugel</span> <br>
+                                        <span id="cursor_cost">_</span>
+                                   </div>
+                                   <div class="btnamount" id="cursor_amount">  
+                                        0
+                                   </div>
+
+                                   
+                              </span>
+                              
+                         </button>
+                    </div>
+                    
+                    <div class="buttonplaceholder">
+                         <!-- Bullet2 -->
+                         <button class="buttontemplate" id="granny">
+                             
+                              <span class="front text"> 
+                              
+                                   <div class="btnICON">
+                                        <img class ="bulletsize" src="./img/Bullet3.gif" alt="picture">
+                                   </div>
+                                   <div class="btncost">
+                                        <span>Getarnte Kugel</span> <br  >
+                                        <span id="granny_cost">100</span>
+                                   </div>
+                                   <div class="btnamount" id="granny_amount">
+                                        0
+                                   </div>
+
+                                   <div class="dropdown-content">
+                                        <a>1 Schuss <br> pro Sekunde</a>
+                                   </div>
+                              </span>
+                         </button>
+                         
+                    </div>
+                    <div class="buttonplaceholder">
+                         <!-- Bullet3 -->
+                         <button class="buttontemplate" id="bullet3">
+                              <span class="front text">
+                     
+                                   <div class="btnICON">
+                                        <img class="bulletsize" src="./img/Bullet2.gif" alt="picture">
+                                   </div>
+                                   <div class="btncost">
+                                        <span>Sniperkugel</span> <br>
+                                        <span id="bullet3_cost">10</span>
+                                   </div>
+                                   <div class="btnamount" id="bullet3_amount">  
+                                        0
+                                   </div>
+
+                                   <div class="dropdown-content">
+                                        <a>8 Schüsse <br> pro Sekunde</a>
+                                   </div>
+                              </span>
+                         </button>
+
+                    </div>
+                    <div class="buttonplaceholder">
+                         <!-- Bullet4 -->
+                         <button class="buttontemplate" id="bullet4">
+                              
+                              <span class="front text">
+                                   <div class="btnICON">
+                                        <img class="bulletsize" src="./img/Bullet4.gif" alt="picture">
+                                   </div>
+                                   <div class="btncost">
+                                        <span>Autokugel</span> <br>
+                                        <span id="bullet4_cost">10</span>
+                                   </div>
+                                   <div class="btnamount" id="bullet4_amount">  
+                                        0
+                                   </div>
+
+                                   <div class="dropdown-content">
+                                        <a>47 Schüsse <br> pro Sekunde</a>
+                                   </div>
+                              </span>
+                         </button>
+
+                    </div>
+                    <div class="buttonplaceholder">
+                         <!-- Bullet5 -->
+                         <button class="buttontemplate" id="bullet5">
+
+                              <span class="front text"> 
+                              
+                                   <div class="btnICON">
+                                        <img class="bulletsize" src="./img/Bullet5.gif" alt="picture">
+                                   </div>
+                                   <div class="btncost">
+                                        <span>Napalm</span> <br>
+                                        <span id="bullet5_cost">10</span>
+                                   </div>
+                                   <div class="btnamount" id="bullet5_amount">  
+                                        0
+                                   </div>
+
+                                   <div class="dropdown-content">
+                                        <a> 260 Schüsse <br> pro Sekunde</a>
+                                   </div>
+                              </span>
+                         </button>
+
+                    </div>
+                    <div class="buttonplaceholder"></div>
+                    <div class="buttonplaceholder"></div>
+                    <div class="buttonplaceholder">
+                         <button class="buttontemplate" id="reset">
+                              <span class="front3 text"> 
+                              <div class="txtrebbtn">alles zurücksetzen</div>
+                              </span>
+                              
+                         </button> 
+                    </div>
+
+               </div>
+
+               <audio src="click sound.mp3" preload="auto" id="audio_template" ></audio>
+               <div id="sound_container"></divid></div> 
+
+          </div>  
+
+          <div class="info">
+             <div class="credits">
+               <h1>Credits:</h1>
+               < Gecodet von Dimitrj Kian; const nickname = "iamkredig" > <br>
+               < Unter der Unterstützung von Simon Ruhland; const title = "Meister" > <br>
+               < Sehlishe Unterstützung von Max und Julia Hentschel;  const nicknames = " Ido, Mad Maximus" >
+             </div>  
+               
+          </div>
+
+          <script src="script.js"></script> 
+    
+     </body>
+</html>
