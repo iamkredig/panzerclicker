@@ -315,7 +315,7 @@ body
               
 
               .greyout{
-                filter: grayscale(90%) !important;
+                filter: grayscale(100%) !important;
                 color: rgba(255, 255, 255, 0.175) !important;
               }
 
