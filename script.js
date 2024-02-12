@@ -5,21 +5,22 @@ function classToggle(item, classname) {return item.classList.toggle(classname)}
 let clicks = 0;
 let cursor = 0;
 let granny = 0;
-let bullet3 =0;
-let bullet4 =0;
-let bullet5 =0;
+let bullet3 = 0;
+let bullet4 = 0;
+let bullet5 = 0;
 
 let sound = false;
 
 let clickscount = document.querySelector('#clicks');
 let incomecount = document.querySelector('#income'); 
-let tank = document.querySelector('.panzer');
+let tank = document.querySelector('#panzer');
 let cursorBtn = document.querySelector('#cursor');
 let grannyBtn = document.querySelector('#granny');
 let bullet3Btn = document.querySelector('#bullet3');
 let bullet4Btn = document.querySelector('#bullet4');
 let bullet5Btn = document.querySelector('#bullet5');
 let resetBtn = document.querySelector('#reset');
+let gogodbtn = document.querySelector("#gogod")
 
 function updateUtils() {
 
@@ -32,6 +33,12 @@ function updateUtils() {
     document.querySelector('#bullet3_amount').textContent = bullet3;
     document.querySelector('#bullet4_amount').textContent = bullet4;
     document.querySelector('#bullet5_amount').textContent = bullet5;
+
+    document.querySelector('#cursor_cost').textContent = Math.round(15*(Math.pow(1.2, cursor)));
+    document.querySelector('#granny_cost').textContent = Math.round(110*(Math.pow(1.045, granny)));
+    document.querySelector('#bullet3_cost').textContent = Math.round(1100*(Math.pow(1.14, bullet3)));
+    document.querySelector('#bullet4_cost').textContent = Math.round(12000*(Math.pow(1.15, bullet4)));
+    document.querySelector('#bullet5_cost').textContent = Math.round(130000*(Math.pow(1.15, bullet5)));
    
     let incomen1  = cursor*0.1 + granny*1 + bullet3*8 + bullet4*47 + bullet5*260;
     let incomen2  = Number(incomen1).toFixed(1);
@@ -93,10 +100,23 @@ tank.addEventListener('click', () => {
         sound.id = clicks;                              // deprecated
         sound.src = "click sound.mp3";
         sound.play();
-    }
-
+    }  
     updateUtils();
 });
+
+tank.addEventListener("mouseover", () => {
+    tank.src = 'img/drive3.gif';
+})
+tank.addEventListener("mouseout", () => {
+    tank.src = 'img/idle3.gif';
+})
+tank.addEventListener("mousedown", () => {
+    tank.src = 'img/attack2.gif';
+})
+tank.addEventListener("mouseup", () => {
+    tank.src = 'img/drive3.gif';
+})
+
 cursorBtn.addEventListener('click', () => {
     if (clicks >= Math.round(15*(Math.pow(1.2, cursor)))) {
         clicks = clicks - Math.round(15*(Math.pow(1.2, cursor)));
@@ -144,15 +164,26 @@ resetBtn.addEventListener('click', () => {
     bullet3 = 0;
     bullet4 = 0;
     bullet5 = 0;
+
+    updateUtils();
+});
+
+gogodbtn.addEventListener('click', () => {
+    clicks = clicks + 100000;
+    updateUtils();
 });
 
 document.querySelector('video').volume = 0;
 
 document.querySelector('#emotionalid').addEventListener('click',() => {
-
     document.querySelector('video').volume = 1;
     document.querySelector('video').currentTime = 0;
     document.querySelector('video').play();
+});
+
+document.querySelector('#emotionalid').addEventListener('mouseleave',() => {
+    document.querySelector('video').volume = 0;
+    document.querySelector('video').pause();
 });
 
     
@@ -174,8 +205,8 @@ let upateIfavailable = setInterval(() => {
     if (clicks >= Math.round(15*(Math.pow(1.2, cursor)))) { classRemove(cursorBtn, "greyout")} else{  classAdd(cursorBtn, "greyout")}
     if (clicks >= Math.round(110*(Math.pow(1.045, granny)))) { classRemove(grannyBtn, "greyout")} else{  classAdd(grannyBtn, "greyout")}
     if (clicks >= Math.round(1100*(Math.pow(1.14, bullet3)))) { classRemove(bullet3Btn, "greyout")} else{  classAdd(bullet3Btn, "greyout")}
-    if (clicks >= Math.round(1100*(Math.pow(1.14, bullet4)))) { classRemove(bullet4Btn, "greyout")} else{  classAdd(bullet4Btn, "greyout")}
-    if (clicks >= Math.round(1100*(Math.pow(1.14, bullet5)))) { classRemove(bullet5Btn, "greyout")} else{  classAdd(bullet5Btn, "greyout")}
+    if (clicks >= Math.round(12000*(Math.pow(1.15, bullet4)))) { classRemove(bullet4Btn, "greyout")} else{  classAdd(bullet4Btn, "greyout")}
+    if (clicks >= Math.round(130000*(Math.pow(1.15, bullet5)))) { classRemove(bullet5Btn, "greyout")} else{  classAdd(bullet5Btn, "greyout")}
 
     updateUtils()
 }, 10);

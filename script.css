@@ -1,6 +1,6 @@
 body
 {
-  background-color: #212121;
+  background: var(--background1);
 
   user-select: none;
   -moz-user-select: none;
@@ -11,21 +11,38 @@ body
 
 :root {
   --font1: 'Pixelify Sans', sans-serif;
+  --green: rgb(73, 147, 94);
+  --red: rgb(102, 51, 51);
+
+  --background1: #212121;
+  --background2: rgb(0, 0, 0, 0.1);
+  --background3: rgba(0, 0, 0, 0.3);
+  --background4: rgb(0, 0, 0, 0.8)
+}
+
+::selection {
+  background: var(--green);
 }
 
     .head
     {
+      white-space: nowrap;
+      overflow: hidden;
       width:100%;
-      height:50px;
-      background:rgb(0, 0, 0, 0.1);
+      height:7vh;
+      background: var(--background2);
       border-radius: 10px;
       display: flex;
-      align-content: center;
+      align-items: center;
     }  
       h1{
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select:none;
       width:auto;
       padding: 0;
-      color:#52A47B;
+      color: var(--green);
       font-size: 2.1rem;
       letter-spacing: 4px;
       font-family:var(--font1);
@@ -38,59 +55,64 @@ body
       margin-top: 1%;
       margin-bottom: 1%;
       width: auto;
-      height:100%;
-      padding-bottom: 1% ;
-      padding-top: 1% ;
+      height: 85vh;
+      padding: 1% ;
       display: inline-block;
       display: flex;
       justify-content: center;
       flex-direction: row;
       overflow: hidden;
-      background:rgb(0, 0, 0, 0.1);
+     background: var(--background2);
       border-radius: 10px;
     }
 
-        .leftrow
+        .siderow
         {
-          height: 100%;
-          width: 400px;
+          width: 30%;
+          height: 80vh;
           background: rgba(0, 0, 0, 0.3);
           border-radius: 10px;
           float: left;
+          padding: 1%;
           overflow: scroll;
           overflow-x: hidden;
           font-family:--var(--font1);
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 13px;
         }
 
-        .infoplaceholder
+        .buttonplaceholder
         {
           height: 100px;
-          width: 360px;
+          width: 100%;
           background: rgba(0, 0, 0, 0.3);
           border-radius: 15px;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 13px;
-          margin-bottom: 13px ;
           display: inline-block;
           display: flex;
           justify-content: center;
           flex-direction: row;
           cursor:default;
+          gap: 13px;
         }
     
         .mainrow
         {
-          width: 500px;
-          height: 100%;
-          margin-inline: 10px;
+          display: flex;
+          justify-content: space-around ;
+          align-items: center;
+          flex-direction: column;
+          height: 80vh;
+          width: 40%;
+          padding: 1%;
         } 
 
             .count 
             {
-              margin: auto;
+            
               height: 160px;
-              width: 400px;
+              width: 75%;
 
               color:white;
               font-size: 1.5rem;
@@ -105,7 +127,7 @@ body
                 .count .spanclicks
                 {
                 font-size: 40px;
-                color: #FF824D;
+                color: var(--green);
                 }
 
                 .count .prsec
@@ -116,8 +138,7 @@ body
                 .buttonemo
                 {
                   outline: none;
-                  color: rgba(255, 255, 255, 0);
-                  background-color: #ffffff00;
+                  background-color: transparent;
                   display: inline-block;
                   margin-top:15px ;
                   border: none;
@@ -128,7 +149,7 @@ body
                     font-size: 1.5rem;
                     font-family: var(--font1);
                     cursor: pointer;
-                    color: rgb(255, 255, 255);
+                    color: white;
                   }
 
                   .projects,.products
@@ -149,7 +170,7 @@ body
                     align-items: center;
                     width: 440px;
                     height: 330px;
-                    background:rgb(0, 0, 0, 0.3);
+                    background: var(--background3);
                     left: 30px;
                     list-style: none;
                     border-radius: 10px;    
@@ -172,7 +193,7 @@ body
 
                   .projects li:hover, .products li:hover
                   {
-                    background-color: rgb(0, 0, 0, 0.3);
+                    background-color: var(--background3);
                   }
 
                   .projects button:focus + ul, .products button:focus + ul
@@ -188,37 +209,21 @@ body
                     position: relative;
                     left: 0;
                     top: 0;
-                    opacity: 1;
                   }
 
             .panzer 
             {
-              width: 400px;
-              height: 250px;
-              margin: auto;
-              margin-top: 50px;
-
-              background:url(img/idle3.gif) no-repeat;
-              background-position: center;
+              width: 75%;
             }
 
-              .panzer:hover
-              {
-                background:url(img/drive3.gif) no-repeat;
-                background-position: center; 
-              }
-
-              .panzer:active
-              {
-                background:url(img/attack2.gif) no-repeat;
-                background-position: center;
+              .panzer:hover{
+                cursor: pointer;
               }
 
           .rightrow
           {
-            height: 100%;
-            width: 400px;
-            height: 570px;
+            width: 30%;
+            height: 80vh;
             float: right;
             background:rgba(0, 0, 0, 0.3);
             border-radius: 10px;
@@ -226,39 +231,23 @@ body
             overflow:scroll;
             overflow-x:hidden;
           }
-          
-            .buttonplaceholder
-            {
-              height: 100px;
-              width: 360px;
-              background: rgba(0, 0, 0, 0.3);
-              border-radius: 15px;
-              margin-left: auto;
-              margin-right: auto;
-              margin-top: 13px;
-              margin-bottom:13px ;
-              display: inline-block;
-              display: flex;
-              justify-content: center;
-              flex-direction: row;
-              overflow: hidden;
-            }
+
             .dropdown-content 
             {
               display: none;
               position: absolute;
-              background-color:rgb(0, 0, 0,0.8);
-              max-width: 160px;
-              height: 100px;
+              background-color:var(--background4);
+              max-width: 33%;
+              height: 100%;
               z-index: 1;
               border-radius: 0 12px 12px 0;
               top:0;
+              left: 0;
               margin: 0;
               padding: 0;
-              overflow: hidden;
 
             }
-            .buttontemplate:hover .dropdown-content {display: block;}
+            .front2:hover .dropdown-content {display: block;}
 
             .dropdown-content a 
             {
@@ -269,15 +258,18 @@ body
               text-decoration: none;
               display: block;
               height: 52px;
+              display: flex;
+              justify-content: center;
             }
 
-              .buttontemplate
+              .front2
               {
+                overflow: hidden;
                 background:rgb(2, 2, 2, 0);
                 ;border: none;
               }
-              /* From uiverse.io */
-              .buttontemplate .button {
+
+              .front2 .button {
                 position: relative;
                 border: none;
                 background: transparent;
@@ -285,43 +277,13 @@ body
                 cursor: pointer;
                 outline-offset: 4px;
                 transition: filter 250ms;
-                user-select: none;
                 touch-action: manipulation;
                 background:rgb(2, 2, 2, 0);
               }
               
-              .front {
-                display: block;
-                position: relative;
-                width: 360px;
-                height: 100px;
-                margin-top: 5px;
-                font-family: var(--font1);
-                border-radius: 12px;
-                font-size: 1.15rem;
-                color: white;
-                background: rgb(65, 121, 60);
-                will-change: transform;
-                transform: translateY(-4px);
-                transition: transform
-                  600ms
-                  cubic-bezier(.3, .7, .4, 1);
-              }
               
               button:hover {
                 filter: brightness(110%);
-              }
-              
-              button:hover .front {
-                transform: translateY(-6px);
-                transition: transform
-                  250ms
-                  cubic-bezier(.3, .7, .4, 1.5);
-              }
-              
-              button:active .front {
-                transform: translateY(-2px);
-                transition: transform 34ms;
               }
               
               button:hover .shadow {
@@ -340,18 +302,23 @@ body
                 outline: none;
               }
             
-              .infoplaceholder {
+              .buttonplaceholder {
                 position: relative;
                 border: none;
                 background: transparent;
                 padding: 0;
                 outline-offset: 4px;
                 transition: filter 250ms;
-                user-select: none;
                 touch-action: manipulation;
                 background:rgb(2, 2, 2, 0);
               }
               
+
+              .greyout{
+                filter: grayscale(90%) !important;
+                color: rgba(255, 255, 255, 0.175) !important;
+              }
+
               .front2 
               {
                 display: block;
@@ -359,12 +326,11 @@ body
                 position: relative;
                 width: 100%;
                 height: 100px;
-                margin-top: 5px;
                 font-family: var(--font1);
                 border-radius: 12px;
                 font-size: 1.15rem;
-                color: rgba(255, 255, 255, 0.175);
-                background: rgb(65, 121, 60);
+                color: white;
+                background: var(--green);
                 will-change: transform;
                 transform: translateY(-4px);
                 transition: transform
@@ -372,16 +338,12 @@ body
                   cubic-bezier(.3, .7, .4, 1);
               }
               
-              .greyout{
-                filter: grayscale(100%) !important;
-              }
-
-              .infoplaceholder:hover 
+              .buttonplaceholder:hover 
               {
                 filter: brightness(110%);
               }
               
-              .infoplaceholder:hover .front2 
+              .buttonplaceholder:hover .front2 
               {
                 transform: translateY(-6px);
                 transition: transform
@@ -389,19 +351,19 @@ body
                   cubic-bezier(.3, .7, .4, 1.5);
               }
               
-              .infoplaceholder:active .front2
+              .buttonplaceholder:active .front2
               {
                 transform: translateY(-2px);
                 transition: transform 34ms;
               }
 
               
-              .infoplaceholder:focus:not(:focus-visible) 
+              .buttonplaceholder:focus:not(:focus-visible) 
               {
                 outline: none;
               }
 
-              .buttontemplate .buttontxtrebbtn {
+              .front2 .buttontxtrebbtn {
                 position: relative;
                 border: none;
                 background: transparent;
@@ -413,55 +375,15 @@ body
                 touch-action: manipulation;
                 background:rgb(2, 2, 2, 0);
               }
-              
-              .front3 {
-                display: block;
-                position: relative;
-                width: 360px;
-                height: 100px;
-                margin-top: 5px;
-                font-family: var(--font1);
-                border-radius: 12px;
-                font-size: 1.15rem;
-                color: white;
-                background: rgb(121, 60, 60);
-                will-change: transform;
-                transform: translateY(-4px);
-                transition: transform
-                  600ms
-                  cubic-bezier(.3, .7, .4, 1);
-              }
-              
-              button:hover {
-                filter: brightness(110%);
-              }
-              
-              button:hover .front3 {
-                transform: translateY(-6px);
-                transition: transform
-                  250ms
-                  cubic-bezier(.3, .7, .4, 1.5);
-              }
-              
-              button:active .front3 {
-                transform: translateY(-2px);
-                transition: transform 34ms;
-              }
-              
-              button:focus:not(:focus-visible) {
-                outline: none;
-              }
 
-            
-
+              .bigredbutton{
+                background: var(--red) !important;
+              }
                   .btnICON
                   {
                     width: 72px;
                     height: 60px;
                     float:left;
-                    margin-left: 5px;
-                    margin-right: 5px;
-                    margin-top:10px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -479,7 +401,6 @@ body
                     height: auto;
                     float:left;
                     margin-left: 10px;
-                    margin-top:10px;
                   }
                   
                   .btnamount
@@ -487,27 +408,24 @@ body
                     width: auto;
                     height: auto;
                     float: right;
-                    margin-right: 10px;
-                    margin-top: 7px;
-                  }
-                  .txtrebbtn
-                  {
-                    padding-top: 35px;
                   }
 
     .info
     {
       width:auto;
-      background:rgb(0, 0, 0, 0.1);
+      background: var(--background2);
       border-radius: 10px;
     }
 
       .credits
       {
-        
+        user-select: all;
+        -moz-user-select: all;
+        -webkit-user-select: all;
+        -ms-user-select: all;
         font-family: var(--font1);
         font-size: 1rem;
-        color: rgb(255, 255, 255);
+        color: white;
         letter-spacing: 2px;
         margin-left:10px;
       }
